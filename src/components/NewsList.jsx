@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Typography } from '@mui/material';
 import NewsCard from './NewsCard';
 
-const NewsList = ({ articles }) => {
+const NewsList = ({ articles, isBookmarked }) => {
   return (
     <Grid container spacing={3} justifyContent="center" p={2}>
       {articles.length === 0 ? (
@@ -10,7 +10,7 @@ const NewsList = ({ articles }) => {
       ) : (
         articles.map((article, index) => (
           <Grid item key={index} xs={12} sm={6} md={4}>
-            <NewsCard article={article} />
+            <NewsCard article={article} isBookmarked={isBookmarked} />
           </Grid>
         ))
       )}
